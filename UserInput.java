@@ -85,15 +85,38 @@ public class UserInput {
 		}
 	}
 	
+	private static void getPassword() 
+	{
+		@SuppressWarnings("resource")
+		Scanner sc = new Scanner(System.in);	
+		flag=0;
+		while(flag==0)
+		{
+			System.out.print("Enter a valid password: \n "
+					+ "Criteria: \n "
+					+ "1. Should be at least 8 characters long \n "
+					+ "2. Should have at least 1 Upper Case letter \n "
+					+ "3. Should have at least 1 number \n "
+					+ "4. Should have exactly 1 special character \n");
+			String password= sc.nextLine();
+			if(!UserRegistration.checkPassword(password))
+				System.out.println("Invalid number!!! Try Again...");
+			else
+			{	
+				System.out.println("You can proceed.");
+				flag=1;
+				break;
+			}
+		}
+	}
+	
 	public static void main(String args[]) 
 	{
 		getFirstName();
 		getLastName();
 		getEmail();
 		getPhoneNumber();
+		getPassword();
 	}
-
-	
-		
 	
 }

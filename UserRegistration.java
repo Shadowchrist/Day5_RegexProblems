@@ -35,5 +35,15 @@ public class UserRegistration {
 		Matcher m = p.matcher(phoneNumber);
 		return m.matches();
 	}
+
+	public static boolean checkPassword(String password) 
+	{
+		String regex="^(?=.*[A-Z])(?=.*[0-9])(?=[^.,:;'!@#$%^&*_+=|]*[.,:;'!@#$%^&*_+=|][^.,:;'!@#$%^&*_+=|]*$).{8,}$";
+		Pattern p = Pattern.compile(regex); 
+		Matcher m = p.matcher(password);
+		return m.matches();
+	}
+	
+	
 	
 }
