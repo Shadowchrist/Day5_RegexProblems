@@ -12,7 +12,7 @@ public class UserInput {
 		flag=0;
 		while(flag==0)
 		{
-			System.out.print("Enter the first name: ");
+			System.out.print("Enter the first name: \n (First character should be in upper case and should be at least 3 characters long) \n");
 			String fname= sc.nextLine();
 			if(!UserRegistration.checkFirstName(fname))
 				System.out.println("Invalid First Name!!! Try Again...");
@@ -32,7 +32,7 @@ public class UserInput {
 		flag=0;
 		while(flag==0)
 		{
-			System.out.print("Enter the last name: ");
+			System.out.print("Enter the last name: \n (First character should be in upper case and should be at least 3 characters long) \n");
 			String lname= sc.nextLine();
 			if(!UserRegistration.checkLastName(lname))
 				System.out.println("Invalid Last Name!!! Try Again...");
@@ -52,10 +52,30 @@ public class UserInput {
 		flag=0;
 		while(flag==0)
 		{
-			System.out.print("Enter valid email ID: ");
+			System.out.print("Enter valid email ID: \n");
 			String email= sc.nextLine();
 			if(!UserRegistration.checkEmail(email))
 				System.out.println("Invalid email ID!!! Try Again...");
+			else
+			{	
+				System.out.println("You can proceed.");
+				flag=1;
+				break;
+			}
+		}
+	}
+	
+	private static void getPhoneNumber() 
+	{
+		@SuppressWarnings("resource")
+		Scanner sc = new Scanner(System.in);	
+		flag=0;
+		while(flag==0)
+		{
+			System.out.print("Enter valid phone number: \n (Country code followed by a space and then the 10 digit number) \n");
+			String phoneNumber= sc.nextLine();
+			if(!UserRegistration.checkPhoneNumber(phoneNumber))
+				System.out.println("Invalid number!!! Try Again...");
 			else
 			{	
 				System.out.println("You can proceed.");
@@ -70,8 +90,10 @@ public class UserInput {
 		getFirstName();
 		getLastName();
 		getEmail();
-		
+		getPhoneNumber();
 	}
+
+	
 		
 	
 }

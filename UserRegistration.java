@@ -28,5 +28,12 @@ public class UserRegistration {
 		Matcher m = p.matcher(email);
 		return m.matches();
 	}
+
+	public static boolean checkPhoneNumber(String phoneNumber) {
+		String regex="^[0-9]{2,3}\\s[0-9]{10}";
+		Pattern p = Pattern.compile(regex); 
+		Matcher m = p.matcher(phoneNumber);
+		return m.matches();
+	}
 	
 }
