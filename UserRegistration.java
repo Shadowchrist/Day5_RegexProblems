@@ -20,5 +20,13 @@ public class UserRegistration {
 		Matcher m = p.matcher(lastName);
 		return m.matches();
 	}
+
+	public static boolean checkEmail(String email) 
+	{
+		String regex="^[a-zA-Z0-9]{1,}+(([\\.+-_][a-zA-Z0-9]{1,})?)+@(?:[a-zA-Z0-9]{1,})+\\.[a-z]{2,4}+((\\.[a-z]{2})?)$";
+		Pattern p = Pattern.compile(regex); 
+		Matcher m = p.matcher(email);
+		return m.matches();
+	}
 	
 }

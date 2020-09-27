@@ -43,12 +43,34 @@ public class UserInput {
 				break;
 			}
 		}
-	}	
+	}
+	
+	private static void getEmail()	
+	{
+		@SuppressWarnings("resource")
+		Scanner sc = new Scanner(System.in);	
+		flag=0;
+		while(flag==0)
+		{
+			System.out.print("Enter valid email ID: ");
+			String email= sc.nextLine();
+			if(!UserRegistration.checkEmail(email))
+				System.out.println("Invalid email ID!!! Try Again...");
+			else
+			{	
+				System.out.println("You can proceed.");
+				flag=1;
+				break;
+			}
+		}
+	}
 	
 	public static void main(String args[]) 
 	{
 		getFirstName();
 		getLastName();
+		getEmail();
+		
 	}
 		
 	
